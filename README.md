@@ -1,8 +1,8 @@
 # crip_text
 
-### Preview
+### Live preview
 
-Site: [https://crip-text.netlify.app/](https://crip-text.netlify.app/).
+Site: [https://crip-text.netlify.app/](https://crip-text.netlify.app/)
 
 ## Project setup
 
