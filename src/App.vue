@@ -101,6 +101,66 @@ export default {
           case "z":
             newArray.push("g");
             break;
+          case "B":
+            newArray.push("F");
+            break;
+          case "D":
+            newArray.push("N");
+            break;
+          case "F":
+            newArray.push("Z");
+            break;
+          case "G":
+            newArray.push("Y");
+            break;
+          case "H":
+            newArray.push("W");
+            break;
+          case "J":
+            newArray.push("Q");
+            break;
+          case "K":
+            newArray.push("L");
+            break;
+          case "L":
+            newArray.push("B");
+            break;
+          case "M":
+            newArray.push("K");
+            break;
+          case "N":
+            newArray.push("H");
+            break;
+          case "P":
+            newArray.push("X");
+            break;
+          case "Q":
+            newArray.push("M");
+            break;
+          case "R":
+            newArray.push("J");
+            break;
+          case "S":
+            newArray.push("P");
+            break;
+          case "T":
+            newArray.push("V");
+            break;
+          case "V":
+            newArray.push("D");
+            break;
+          case "W":
+            newArray.push("T");
+            break;
+          case "X":
+            newArray.push("R");
+            break;
+          case "Y":
+            newArray.push("S");
+            break;
+          case "Z":
+            newArray.push("G");
+            break;
           default:
             newArray.push(this.crip[key]);
             break;
@@ -172,6 +232,66 @@ export default {
           case "g":
             newArray.push("z");
             break;
+          case "F":
+            newArray.push("B");
+            break;
+          case "N":
+            newArray.push("D");
+            break;
+          case "Z":
+            newArray.push("F");
+            break;
+          case "Y":
+            newArray.push("G");
+            break;
+          case "W":
+            newArray.push("H");
+            break;
+          case "Q":
+            newArray.push("J");
+            break;
+          case "L":
+            newArray.push("K");
+            break;
+          case "B":
+            newArray.push("L");
+            break;
+          case "K":
+            newArray.push("M");
+            break;
+          case "H":
+            newArray.push("N");
+            break;
+          case "X":
+            newArray.push("P");
+            break;
+          case "M":
+            newArray.push("Q");
+            break;
+          case "J":
+            newArray.push("R");
+            break;
+          case "P":
+            newArray.push("S");
+            break;
+          case "V":
+            newArray.push("T");
+            break;
+          case "D":
+            newArray.push("V");
+            break;
+          case "T":
+            newArray.push("W");
+            break;
+          case "R":
+            newArray.push("X");
+            break;
+          case "S":
+            newArray.push("Y");
+            break;
+          case "G":
+            newArray.push("Z");
+            break;
           default:
             newArray.push(this.crip[key]);
             break;
@@ -216,5 +336,9 @@ body {
 .col button {
   height: 50px;
   font-size: 20px;
+}
+
+.col + .col {
+  border-left: 4px solid red;
 }
 </style>
