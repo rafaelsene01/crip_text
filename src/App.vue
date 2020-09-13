@@ -3,18 +3,6 @@
     <div class="col">
       <editor
         ref="ace"
-        v-model="crip"
-        @init="editorInit"
-        lang="text"
-        theme="dracula"
-        width="100%"
-        height="100%"
-      />
-      <button @click="criptografar()">Criptografar</button>
-    </div>
-    <div class="col">
-      <editor
-        ref="ace2"
         v-model="desCrip"
         @init="editorInit"
         lang="text"
@@ -22,7 +10,21 @@
         width="100%"
         height="100%"
       />
+      <button @click="criptografar()">Criptografar</button>
+      <p>{{ crip }}</p>
+    </div>
+    <div class="col">
+      <editor
+        ref="ace2"
+        v-model="crip"
+        @init="editorInit"
+        lang="text"
+        theme="dracula"
+        width="100%"
+        height="100%"
+      />
       <button @click="descriptografar()">Descriptografar</button>
+      <p class="desCrip">{{ crip }}</p>
     </div>
   </div>
 </template>
@@ -39,8 +41,8 @@ export default {
     },
     criptografar() {
       let newArray = [];
-      for (const key in this.crip) {
-        switch (this.crip[key]) {
+      for (const key in this.desCrip) {
+        switch (this.desCrip[key]) {
           case "b":
             newArray.push("f");
             break;
@@ -160,6 +162,137 @@ export default {
             break;
           case "Z":
             newArray.push("G");
+            break;
+          default:
+            newArray.push(this.desCrip[key]);
+            break;
+        }
+      }
+      this.crip = newArray.join("");
+    },
+    descriptografar() {
+      let newArray = [];
+      for (const key in this.crip) {
+        switch (this.crip[key]) {
+          case "f":
+            newArray.push("b");
+            break;
+          case "n":
+            newArray.push("d");
+            break;
+          case "z":
+            newArray.push("f");
+            break;
+          case "y":
+            newArray.push("g");
+            break;
+          case "w":
+            newArray.push("h");
+            break;
+          case "q":
+            newArray.push("j");
+            break;
+          case "l":
+            newArray.push("k");
+            break;
+          case "b":
+            newArray.push("l");
+            break;
+          case "k":
+            newArray.push("m");
+            break;
+          case "h":
+            newArray.push("n");
+            break;
+          case "x":
+            newArray.push("p");
+            break;
+          case "m":
+            newArray.push("q");
+            break;
+          case "j":
+            newArray.push("r");
+            break;
+          case "p":
+            newArray.push("s");
+            break;
+          case "v":
+            newArray.push("t");
+            break;
+          case "d":
+            newArray.push("v");
+            break;
+          case "t":
+            newArray.push("w");
+            break;
+          case "r":
+            newArray.push("x");
+            break;
+          case "s":
+            newArray.push("y");
+            break;
+          case "g":
+            newArray.push("z");
+            break;
+          case "F":
+            newArray.push("B");
+            break;
+          case "N":
+            newArray.push("D");
+            break;
+          case "Z":
+            newArray.push("F");
+            break;
+          case "Y":
+            newArray.push("G");
+            break;
+          case "W":
+            newArray.push("H");
+            break;
+          case "Q":
+            newArray.push("J");
+            break;
+          case "L":
+            newArray.push("K");
+            break;
+          case "B":
+            newArray.push("L");
+            break;
+          case "K":
+            newArray.push("M");
+            break;
+          case "H":
+            newArray.push("N");
+            break;
+          case "X":
+            newArray.push("P");
+            break;
+          case "M":
+            newArray.push("Q");
+            break;
+          case "J":
+            newArray.push("R");
+            break;
+          case "P":
+            newArray.push("S");
+            break;
+          case "V":
+            newArray.push("T");
+            break;
+          case "D":
+            newArray.push("V");
+            break;
+          case "T":
+            newArray.push("W");
+            break;
+          case "R":
+            newArray.push("X");
+            break;
+          case "S":
+            newArray.push("Y");
+            break;
+          case "G":
+            newArray.push("Z");
             break;
           default:
             newArray.push(this.crip[key]);
@@ -167,137 +300,6 @@ export default {
         }
       }
       this.desCrip = newArray.join("");
-    },
-    descriptografar() {
-      let newArray = [];
-      for (const key in this.desCrip) {
-        switch (this.desCrip[key]) {
-          case "f":
-            newArray.push("b");
-            break;
-          case "n":
-            newArray.push("d");
-            break;
-          case "z":
-            newArray.push("f");
-            break;
-          case "y":
-            newArray.push("g");
-            break;
-          case "w":
-            newArray.push("h");
-            break;
-          case "q":
-            newArray.push("j");
-            break;
-          case "l":
-            newArray.push("k");
-            break;
-          case "b":
-            newArray.push("l");
-            break;
-          case "k":
-            newArray.push("m");
-            break;
-          case "h":
-            newArray.push("n");
-            break;
-          case "x":
-            newArray.push("p");
-            break;
-          case "m":
-            newArray.push("q");
-            break;
-          case "j":
-            newArray.push("r");
-            break;
-          case "p":
-            newArray.push("s");
-            break;
-          case "v":
-            newArray.push("t");
-            break;
-          case "d":
-            newArray.push("v");
-            break;
-          case "t":
-            newArray.push("w");
-            break;
-          case "r":
-            newArray.push("x");
-            break;
-          case "s":
-            newArray.push("y");
-            break;
-          case "g":
-            newArray.push("z");
-            break;
-          case "F":
-            newArray.push("B");
-            break;
-          case "N":
-            newArray.push("D");
-            break;
-          case "Z":
-            newArray.push("F");
-            break;
-          case "Y":
-            newArray.push("G");
-            break;
-          case "W":
-            newArray.push("H");
-            break;
-          case "Q":
-            newArray.push("J");
-            break;
-          case "L":
-            newArray.push("K");
-            break;
-          case "B":
-            newArray.push("L");
-            break;
-          case "K":
-            newArray.push("M");
-            break;
-          case "H":
-            newArray.push("N");
-            break;
-          case "X":
-            newArray.push("P");
-            break;
-          case "M":
-            newArray.push("Q");
-            break;
-          case "J":
-            newArray.push("R");
-            break;
-          case "P":
-            newArray.push("S");
-            break;
-          case "V":
-            newArray.push("T");
-            break;
-          case "D":
-            newArray.push("V");
-            break;
-          case "T":
-            newArray.push("W");
-            break;
-          case "R":
-            newArray.push("X");
-            break;
-          case "S":
-            newArray.push("Y");
-            break;
-          case "G":
-            newArray.push("Z");
-            break;
-          default:
-            newArray.push(this.crip[key]);
-            break;
-        }
-      }
-      this.crip = newArray.join("");
     },
   },
 

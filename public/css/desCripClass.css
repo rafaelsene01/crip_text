@@ -1,0 +1,13 @@
+.desCrip {
+  font-family: "Montserrat Crip";
+}
+
+@font-face {
+  font-family: "Montserrat Crip";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat Regular Crip"), local("Montserrat-Regular-Crip"),
+    url("https://crip-text.netlify.app/font/Montserrat-Regular-Crip.ttf")
+      format("truetype");
+}
