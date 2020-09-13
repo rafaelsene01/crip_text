@@ -8,6 +8,6 @@
   font-weight: 400;
   font-display: swap;
   src: local("Montserrat Regular Crip"), local("Montserrat-Regular-Crip"),
-    url("https://crip-text.netlify.app/font/Montserrat-Regular-Crip.ttf")
+    url("https://crip-text.netlify.app/fonts/Montserrat-Regular-Crip.ttf")
       format("truetype");
 }
