@@ -11,6 +11,7 @@
         height="100%"
       />
       <button @click="criptografar()">Criptografar</button>
+      <h4>Criptografado</h4>
       <p>{{ crip }}</p>
     </div>
     <div class="col">
@@ -24,6 +25,7 @@
         height="100%"
       />
       <button @click="descriptografar()">Descriptografar</button>
+      <h4>Descriptografado</h4>
       <p class="desCrip">{{ crip }}</p>
     </div>
   </div>
@@ -320,6 +322,10 @@ export default {
 </script>
 
 <style lang="scss">
+.desCrip {
+  font-weight: 600;
+  font-style: italic;
+}
 body {
   margin: 0;
 }
