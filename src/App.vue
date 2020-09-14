@@ -1,32 +1,39 @@
 <template>
   <div id="app">
-    <div class="col">
-      <editor
-        ref="ace"
-        v-model="desCrip"
-        @init="editorInit"
-        lang="text"
-        theme="dracula"
-        width="100%"
-        height="100%"
-      />
-      <button @click="criptografar()">Criptografar</button>
-      <h4>Criptografado</h4>
-      <p>{{ crip }}</p>
-    </div>
-    <div class="col">
-      <editor
-        ref="ace2"
-        v-model="crip"
-        @init="editorInit"
-        lang="text"
-        theme="dracula"
-        width="100%"
-        height="100%"
-      />
-      <button @click="descriptografar()">Descriptografar</button>
-      <h4>Descriptografado</h4>
-      <p class="desCrip">{{ crip }}</p>
+    <p>
+      Usando como class('desCrip'): &lt;link
+      href="https://fonts-crip.herokuapp.com/desCripClass.css" rel="stylesheet"
+      /&gt;
+    </p>
+    <div class="row">
+      <div class="col">
+        <editor
+          ref="ace"
+          v-model="desCrip"
+          @init="editorInit"
+          lang="text"
+          theme="dracula"
+          width="100%"
+          height="100%"
+        />
+        <button @click="criptografar()">Criptografar</button>
+        <h4>Texto Criptografado (Resultado)</h4>
+        <p>{{ crip }}</p>
+      </div>
+      <div class="col">
+        <editor
+          ref="ace2"
+          v-model="crip"
+          @init="editorInit"
+          lang="text"
+          theme="dracula"
+          width="100%"
+          height="100%"
+        />
+        <button @click="descriptografar()">Descriptografar</button>
+        <h4>Texto Descriptografado (Resultado)</h4>
+        <p class="desCrip">{{ crip }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -322,18 +329,27 @@ export default {
 </script>
 
 <style lang="scss">
-.desCrip {
-  font-weight: 600;
-  font-style: italic;
+h4,
+p {
+  margin: 4px;
 }
+
 body {
   margin: 0;
 }
+
 #app {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
 }
+.row {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+
 .col {
   width: 50%;
   display: flex;
